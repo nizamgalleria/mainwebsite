@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Business</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Header (appears on every "page") -->
+<header>
+  <nav>
+    <ul>
+      <li><a href="#" onclick="showPage('home')">Home</a></li>
+      <li><a href="#" onclick="showPage('about')">About Us</a></li>
+      <li><a href="#" onclick="showPage('catalogue')">Catalogue</a></li>
+      <li><a href="#" onclick="showPage('price')">Price Calculator</a></li>
+      <li><a href="#" onclick="showPage('projects')">Past Projects</a></li>
+      <li><a href="#" onclick="showPage('inspiration')">Inspiration</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- "Pages" -->
+<section id="home">
+  <h1>Home</h1>
+  <p>Welcome to our website!</p>
+</section>
+
+<section id="about" style="display: none;">
+  <h1>About Us</h1>
+  <p>About our business...</p>
+</section>
+
+<section id="catalogue" style="display: none;">
+  <h1>Catalogue</h1>
+  <div class="catalogue-content">
+    <p>Explore our detailed catalogue of products and services.</p>
+
+    <!-- Button to View Catalogue -->
+    <a href="your-catalogue-file-url.pdf" class="catalogue-button" target="_blank">Review the Catalogue Here</a>
+  </div>
+</section>
+
+<section id="price" style="display: none;">
+  <h1>Price Calculator</h1>
+  <p>Use our pricing calculator to estimate your project costs:</p>
+   <div class="calculator">
+      <label for="unit">Select Unit Conversion:</label>
+        <select id="unit" name="unit">
+              <option value="ft">Feet (ft)</option>
+              <option value="m">Meter (m)</option>
+        </select>
+
+        <label for="height">Tinggi Dinding :</label>
+        <input type="number" id="height" name="height" required>
+
+        <label for="width">Lebar Dinding:</label>
+        <input type="number" id="width" name="width" required>
+
+        <label for="design">Pilih Design:</label>
+        <select id="design" name="design">
+            <option value="18">Classic Wainscoting</option>
+            <option value="21">Twin Box Wainscoting</option>
+            <option value="25">Shiplap Wall (Horizontal)</option>
+            <option value="25">Beadboard Wall (Vertical)</option>
+            <option value="19">Batten Wall</option>
+            <option value="19">Board & Batten</option>
+            <option value="45">Fluted Panel WPC</option>
+            <option value="28">Fluted Panel MDF</option>
+            <option value="25">Accent Wall</option>
+            <option value="23">Herringbone Wall</option>
+            <option value="21">Diamond Wall</option>
+            <option value="60">Diamond Mirror</option>
+            <option value="45">Grand Mirror</option>
+            <option value="12">Textured Wall</option>
+        </select>
+
+<div class="button-container">
+            <button type="button" onclick="calculateQuote()">CALCULATE</button>
+        </div>
+    </form> 
+  
+    <h2 id="quoteResult"></h2>
+
+      <p id="result"></p>
+       <script>
+        function calculateQuote() {
+            const height = parseFloat(document.getElementById('height').value);
+            const width = parseFloat(document.getElementById('width').value);
+            const designPrice = parseFloat(document.getElementById('design').value);
+            const unit = document.getElementById('unit').value;
+            
+            if (isNaN(height) || isNaN(width)) {
+                alert('Please enter valid numbers for height and width.');
+                return;
+            }
+
+            let area;
+            if (unit == 'ft') 
+            {
+                area = height * width;
+            } 
+            else 
+            {
+              // Convert feet to m
+              area = (height * 3.281) * (width * 3.281); 
+            }
+
+            const quote = area * designPrice;
+
+            document.getElementById('quoteResult').innerText = 'Estimated Price: RM' + quote.toFixed(2);
+        }
+    </script>
+    </div>
+</section>
+
+<section id="projects" style="display: none;">
+  <h1>Past Projects</h1>
+  <p>Page under construction...</p>
+</section>
+
+<section id="inspiration" style="display: none;">
+  <h1>Inspiration</h1>
+  <p>Inspirational ideas...</p>
+</section>
+
+<!-- Footer (appears on every "page") -->
+<footer>
+  <p>Contact Us: Your Address Here</p>
+</footer>
+
+  <script src="scripts.js"></script>
+  
+  <!-- Scroll to Top Button -->
+<a href="#" class="scroll-to-top" id="scrollToTopBtn">↑</a>
+
+</body>
+</html>
