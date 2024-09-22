@@ -79,8 +79,7 @@
 
 <div class="button-container">
             <button type="button" onclick="calculateQuote()">CALCULATE</button>
-        </div>
-    </form> 
+        </div> 
   
     <h2 id="quoteResult"></h2>
 
@@ -131,7 +130,12 @@
   <p>Contact Us: Your Address Here</p>
 </footer>
 
-  <script src="scripts.js"></script>
+ <script>
+    function showPage(pageId) {
+       const sections = document.querySelectorAll('section');
+       sections.forEach(section => section.style.display = 'none');
+       document.getElementById(pageId).style.display = 'block';
+    }</script>
 
 </body>
 </html>
