@@ -156,26 +156,7 @@ section {
     width: 100%;
   }
 }
-/* Scroll to Top Button Styling */
-.scroll-to-top {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  background-color: #28a745;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  padding: 15px;
-  font-size: 18px;
-  text-decoration: none;
-  display: none; /* Initially hidden */
-  transition: background-color 0.3s ease;
-  z-index: 1000; /* Ensure it's above other elements */
-}
 
-.scroll-to-top:hover {
-  background-color: #218838;
-}
 /* Basic styles for the navigation and sections */
 nav ul {
   list-style-type: none;
