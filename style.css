@@ -1,0 +1,199 @@
+/* Global Styling */
+body {
+  font-family: 'Century Gothic', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #0c5064;
+  padding: 10px 0;
+  text-align: center;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  color: #f0a500;
+}
+
+header {
+  background-image: url('https://i.pinimg.com/736x/5a/a8/16/5aa816a4010db183e0f080523e7edba6.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+  margin-top: 40px;
+  padding: 150px 20px;
+}
+
+.logo {
+  max-width: 200px;
+}
+
+header h1 {
+  font-size: 3em;
+  margin: 20px 0 10px 0;
+}
+
+header p {
+  font-size: 1.5em;
+}
+
+/* Section Styling */
+section {
+  padding: 100px 20px;
+  min-height: 100vh;
+}
+
+#about { background-color: #f8f9fa; }
+#catalogue { background-image: url('https://i.pinimg.com/564x/e5/07/d9/e507d966979bbb9251b947c2f9f4e99d.jpg'); background-size: cover; }
+#price-calculator { background-color: #dee2e6; }
+#projects { background-image: url('https://internationaleventvenue.com/wp-content/uploads/2020/09/under-construction-gif-11.gif'); background-size: cover; }
+#inspiration { background-color: #adb5bd; }
+
+
+/* Basic Styling for Price Calculator */
+.calculator {
+  background-color: #0c5064;
+  padding: 20px;
+  border-radius: 10px;
+  border-color: #ff0000;
+  max-width: 500px;
+  margin: 20px auto;
+}
+
+.calculator label {
+  display: block;
+  color: #cccccc;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.calculator input, .calculator select, .calculator button {
+  width: 95%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #ced4da;
+}
+
+.calculator button {
+  background-color: #ff0000;
+  border-color: #cccccc;
+  border: 5px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.calculator button:hover {
+  background-color: #660000;
+}
+
+.calculator #result {
+  font-size: 1.2em;
+  color: #cccccc;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+
+.catalogue-content {
+  background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background for readability */
+  color: white;
+  padding: 100px;
+  border-radius: 20px;
+  
+}
+
+.catalogue-button {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: #28a745;
+  color: white;
+  text-decoration: none;
+  font-size: 1.2em;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.catalogue-button:hover {
+  background-color: #218838;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+  .catalogue-section {
+    padding: 80px 10px;
+  }
+
+  .catalogue-content {
+    padding: 15px;
+  }
+
+  .catalogue-button {
+    width: 100%;
+  }
+}
+/* Scroll to Top Button Styling */
+.scroll-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 15px;
+  font-size: 18px;
+  text-decoration: none;
+  display: none; /* Initially hidden */
+  transition: background-color 0.3s ease;
+  z-index: 1000; /* Ensure it's above other elements */
+}
+
+.scroll-to-top:hover {
+  background-color: #218838;
+}
+/* Basic styles for the navigation and sections */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 10px;
+}
+
+section {
+  padding: 20px;
+}
+
+footer {
+  margin-top: 50px;
+  background-color: #e9ecef;
+  padding: 20px;
+  text-align: center;
+}
