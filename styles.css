@@ -1,214 +1,56 @@
-
- body {
-      font-family: 'Century Gothic', sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-
-    /* Header styling */
-    header {
-      position: fixed;
-      width: 100%;
-      top: 0;
-      left: 0;
-      background-color: #333;
-      color: white;
-      z-index: 1000;
-      transition: top 0.3s;
-    }
-
-    nav {
-      display: flex;
-      justify-content: space-between;
-      padding: 10px;
-      align-items: center;
-    }
-
-    .nav-links {
-      display: flex;
-      list-style: none;
-      padding-left: 0;
-    }
-
-    .nav-links li {
-      margin: 0 15px;
-    }
-
-    .nav-links a {
-      color: white;
-      text-decoration: none;
-      font-size: 16px;
-    }
-
-    .hamburger {
-      display: none;
-      font-size: 30px;
-      cursor: pointer;
-    }
-
-    /* Mobile Menu */
-    .nav-links.active {
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 0;
-      background-color: rgba(0, 0, 0, 0.9);
-      height: 100vh;
-      width: 100%;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-    }
-
-    .nav-links.active li {
-      margin: 20px 0;
-    }
-
-    /* Section styling */
-    section {
-      padding: 80px 20px;
-      min-height: 100vh;
-    }
-
-    /* Footer styling */
-    footer {
-      background-color: #333;
-      color: white;
-      text-align: center;
-      padding: 20px;
-    }
-
-    /* Scroll to top button styling */
-    #scrollTopBtn {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: green;
-      color: white;
-      border: none;
-      padding: 10px 15px;
-      border-radius: 50%;
-      cursor: pointer;
-      display: none; /* Initially hidden */
-    }
-
-    /* Media Queries for Mobile */
-    @media (max-width: 768px) {
-      .hamburger {
-        display: block;
-      }
-
-      .nav-links {
-        display: none;
-        width: 100%;
-        flex-direction: column;
-        background-color: rgba(0, 0, 0, 0.9);
-      }
-
-      .nav-links.active {
-        display: flex;
-      }
-    }
-
-/* Default styles for larger screens */
 body {
   font-family: 'Century Gothic', sans-serif;
-  font-size: 18px;
-  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  padding-top: 60px; /* Avoid content being hidden under the fixed navbar */
 }
 
-/* Adjust styles for mobile screens (max-width 768px) */
-@media (max-width: 768px) {
-  body {
-    font-size: 16px;
-  }
-  
-  .catalogue-content {
-    text-align: center;
-  }
-
-  .catalogue-button {
-    width: 100%; /* Make the button full width on mobile */
-  }
-}
-
-/* Even smaller screens (max-width 480px) */
-@media (max-width: 480px) {
-  body {
-    font-size: 14px;
-  }
-  
-  .catalogue-button {
-    padding: 15px; /* Adjust padding on smaller screens */
-  }
-}
-img {
-  max-width: 100%;
-  height: auto; /* Maintains aspect ratio */
-}
-button, a {
-  padding: 15px 20px;
-  font-size: 16px;
-}
-
-
-nav {
+/* Header styling */
+header {
   position: fixed;
-  top: 0;
   width: 100%;
+  top: 0;
+  left: 0;
   background-color: #0c5064;
-  padding: 0px 0;
+  color: white;
+  z-index: 1000;
+  padding: 20px 0;
   text-align: center;
 }
 
-nav ul {
-   display: flex;
-  flex-wrap: wrap; 
-  justify-content: space-around;
-}
-@media (max-width: 768px) {
-  nav ul {
-    flex-direction: column; /* Stack navigation on mobile */
-    align-items: center;
-  }
+header h1 {
+  font-size:2.5em;
 }
 
-nav ul li {
-  display: inline;
+header p {
+  font size: 1.2em;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #0c5064;
+  z-index: 1001;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  padding-left: 0;
+}
+
+.nav-links li {
   margin: 0 15px;
 }
 
-nav ul li a {
+.nav-links a {
   color: white;
   text-decoration: none;
-  font-weight: bold;
+  font-size: 16px;
 }
 
-#navbar ul li a:hover {
-  color: #f0a500;
-}
-#navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  transition: top 0.3s;
-  z-index: 999; /* Ensure it's above other content */
-}
-
-#navbar ul {
-  list-style: none;
-  margin: 0;
-  padding: 10px;
-  display: flex;
-  justify-content: space-around;
-}
-
-#navbar a {
-  color: white;
-  text-decoration: none;
-  padding: 15px;
-}
 .hamburger {
   display: none;
   font-size: 30px;
@@ -219,79 +61,146 @@ nav ul li a {
   top: 15px;
 }
 
-/* Mobile-specific styling */
+/* Mobile Menu */
+#navLinks {
+  display: none; /* Hidden initially */
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  flex-direction: column;
+  z-index: 9999;
+}
+
+#navLinks li {
+  text-align: center;
+  padding: 15px;
+}
+
+#navLinks.active {
+  display: flex; /* Show menu when active */
+}
+
 @media (max-width: 768px) {
-  #navLinks {
-    display: none; /* Hide nav links initially */
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    background-color: #333;
-    flex-direction: column;
-  }
-
-  #navLinks li {
-    text-align: center;
-    padding: 15px;
-  }
-
   .hamburger {
     display: block; /* Show hamburger menu on mobile */
   }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+
+  .nav-links.active {
+    display: flex;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .nav-links li {
+    margin: 20px 0;
+  }
 }
 
-/* Show the menu when it's active */
-#navLinks.active {
-  display: flex; /* Show nav links when active */
-}
-body {
-  padding-top: 60px; /* Avoid content being hidden under the fixed navbar */
-}
-
-
-header {
-  background-image: url('https://i.pinimg.com/736x/5a/a8/16/5aa816a4010db183e0f080523e7edba6.jpg');
-  background-size: cover;
-  background-position: center;
-  color: white;
-  text-align: center;
-  margin-top: 40px;
-  padding: 150px 20px;
-}
-
-.logo {
-  max-width: 200px;
-}
-
-header h1 {
-  font-size: 3em;
-  margin: 20px 0 10px 0;
-}
-
-header p {
-  font-size: 1.5em;
-}
-
-/* Section Styling */
+/* Section styling */
 section {
   padding: 100px 20px;
   min-height: 100vh;
 }
 
-#about { background-color: #f8f9fa; }
-#catalogue { background-image: url('https://i.pinimg.com/564x/e5/07/d9/e507d966979bbb9251b947c2f9f4e99d.jpg'); background-size: cover; }
-#price-calculator { background-color: #dee2e6; }
-#projects { background-image: url('https://internationaleventvenue.com/wp-content/uploads/2020/09/under-construction-gif-11.gif'); background-size: cover; }
-#inspiration { background-color: #adb5bd; }
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  section {
+    padding: 80px 20px;
+  }
+}
 
+/* Footer styling */
+footer {
+  background-color: #0c5064;
+  color: #cccccc;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
 
-/* Basic Styling for Price Calculator */
+/* Scroll to top button styling */
+#scrollTopBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: green;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none; /* Initially hidden */
+  z-index: 1000; /* Ensure it appears above other content */
+}
+
+/* Show button after scrolling down */
+window.onscroll = function() {
+  const scrollTopBtn = document.getElementById("scrollTopBtn");
+  if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+    scrollTopBtn.style.display = "block";
+  } else {
+    scrollTopBtn.style.display = "none";
+  }
+};
+
+function scrollToTop() {
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+/* Catalogue Section */
+.catalogue-content {
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+  color: white;
+  padding: 100px;
+  border-radius: 20px;
+}
+
+.catalogue-button {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: #28a745;
+  color: white;
+  text-decoration: none;
+  font-size: 1.2em;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.catalogue-button:hover {
+  background-color: #218838;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .catalogue-button {
+    width: 100%;
+  }
+}
+
+/* Price Calculator */
 .calculator {
   background-color: #0c5064;
   padding: 20px;
   border-radius: 10px;
-  border-color: #ff0000;
   max-width: 500px;
   margin: 20px auto;
 }
@@ -313,8 +222,6 @@ section {
 
 .calculator button {
   background-color: #ff0000;
-  border-color: #cccccc;
-  border: 5px;
   color: white;
   font-weight: bold;
   cursor: pointer;
@@ -331,64 +238,51 @@ section {
   margin-top: 10px;
 }
 
-
-.catalogue-content {
-  background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background for readability */
-  color: white;
-  padding: 100px;
-  border-radius: 20px;
-  
-}
-
-.catalogue-button {
-  display: inline-block;
-  padding: 15px 30px;
-  background-color: #28a745;
-  color: white;
-  text-decoration: none;
-  font-size: 1.2em;
-  font-weight: bold;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-}
-
-.catalogue-button:hover {
-  background-color: #218838;
-}
-
 /* Responsive Layout */
 @media (max-width: 768px) {
-  .catalogue-section {
-    padding: 80px 10px;
-  }
-
-  .catalogue-content {
+  .calculator {
     padding: 15px;
   }
+}
 
-  .catalogue-button {
-    width: 100%;
+/* Global Styling for Links and Buttons */
+button, a {
+  padding: 15px 20px;
+  font-size: 16px;
+}
+
+img {
+  max-width: 100%;
+  height: auto; /* Maintain aspect ratio */
+}
+
+/* Adjustments for Header Image */
+header {
+  background-image: url('https://i.pinimg.com/736x/5a/a8/16/5aa816a4010db183e0f080523e7edba6.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+  margin-top: 40px;
+  padding: 150px 20px;
+}
+
+header h1 {
+  font-size: 3em;
+  margin: 20px 0 10px 0;
+}
+
+header p {
+  font-size: 1.5em;
+}
+
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2.5em;
+  }
+  
+  header p {
+    font-size: 1.2em;
   }
 }
 
-/* Basic styles for the navigation and sections */
-nav ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-nav ul li {
-  display: inline;
-  margin-right: 10px;
-}
-
-section {
-  padding: 20px;
-}
-
-footer {
-  margin-top: 50px;
-  background-color: #e9ecef;
-  padding: 20px;
-  text-align: center;
-}
