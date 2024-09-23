@@ -126,14 +126,28 @@
   <p>Contact Us: Your Address Here</p>
 </footer>
 
+  <button id="scrollTopBtn" onclick="scrolltoTop()">&#8679;</button>
+  
  <script>
     function showPage(pageId) {
        const sections = document.querySelectorAll('section');
        sections.forEach(section => section.style.display = 'none');
        document.getElementById(pageId).style.display = 'block';
     } 
- </script>
-  <script>
+   
+   function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  window.addEventListener("scroll", function() {
+    const scrollTopBtn = document.getElementById("scrollTopBtn");
+    if (window.scrollY > 300) {
+      scrollTopBtn.style.display = "block";
+    } else {
+      scrollTopBtn.style.display = "none";
+    }
+  });
+   
   let lastScrollTop = 0;
   const navbar = document.getElementById("navbar");
 
@@ -150,10 +164,7 @@
 
     lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
   });
-  
-</script>
-  
-  <script>
+   
   function toggleMenu() {
     const navLinks = document.getElementById("navLinks");
     navLinks.classList.toggle("active"); // Toggle the active class
