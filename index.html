@@ -10,10 +10,11 @@
 
   <!-- Header (appears on every "page") -->
 <header>
-  <nav>
-    <ul>
+  <nav id="navbar">
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()"> &#9776;
+    </div>
+    <ul id="navLinks" class="nav-links">
       <li><a href="#" onclick="showPage('home')">Home</a></li>
-      <li><a href="#" onclick="showPage('about')">About Us</a></li>
       <li><a href="#" onclick="showPage('catalogue')">Catalogue</a></li>
       <li><a href="#" onclick="showPage('price')">Price Calculator</a></li>
       <li><a href="#" onclick="showPage('projects')">Past Projects</a></li>
@@ -26,11 +27,6 @@
 <section id="home">
   <h1>Home</h1>
   <p>Welcome to our website!</p>
-</section>
-
-<section id="about" style="display: none;">
-  <h1>About Us</h1>
-  <p>About our business...</p>
 </section>
 
 <section id="catalogue" style="display: none;">
@@ -137,6 +133,34 @@
        document.getElementById(pageId).style.display = 'block';
     } 
  </script>
+  <script>
+  let lastScrollTop = 0;
+  const navbar = document.getElementById("navbar");
+
+  window.addEventListener("scroll", function() {
+    let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (currentScroll > lastScrollTop) {
+      // User is scrolling down - hide navbar
+      navbar.style.top = "-60px"; // Adjust based on navbar height
+    } else {
+      // User is scrolling up - show navbar
+      navbar.style.top = "0";
+    }
+
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
+  });
+  
+</script>
+  
+  <script>
+  function toggleMenu() {
+    const navLinks = document.getElementById("navLinks");
+    navLinks.classList.toggle("active"); // Toggle the active class
+  }
+</script>
+
+
 
 </body>
 </html>
