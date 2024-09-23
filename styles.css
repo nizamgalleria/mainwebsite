@@ -1,9 +1,115 @@
-/* Global Styling */
-body {
-  margin: 0;
-  padding: 0;
-  scroll-behavior: smooth;
-}
+
+ body {
+      font-family: 'Century Gothic', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Header styling */
+    header {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background-color: #333;
+      color: white;
+      z-index: 1000;
+      transition: top 0.3s;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px;
+      align-items: center;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .nav-links li {
+      margin: 0 15px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 30px;
+      cursor: pointer;
+    }
+
+    /* Mobile Menu */
+    .nav-links.active {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.9);
+      height: 100vh;
+      width: 100%;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .nav-links.active li {
+      margin: 20px 0;
+    }
+
+    /* Section styling */
+    section {
+      padding: 80px 20px;
+      min-height: 100vh;
+    }
+
+    /* Footer styling */
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    /* Scroll to top button styling */
+    #scrollTopBtn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: green;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none; /* Initially hidden */
+    }
+
+    /* Media Queries for Mobile */
+    @media (max-width: 768px) {
+      .hamburger {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.9);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+    }
 
 /* Default styles for larger screens */
 body {
