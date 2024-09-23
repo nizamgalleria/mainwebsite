@@ -1,24 +1,71 @@
 /* Global Styling */
 body {
-  font-family: 'Century Gothic', Arial, sans-serif;
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
 }
+
+/* Default styles for larger screens */
+body {
+  font-family: 'Century Gothic', sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* Adjust styles for mobile screens (max-width 768px) */
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+  
+  .catalogue-content {
+    text-align: center;
+  }
+
+  .catalogue-button {
+    width: 100%; /* Make the button full width on mobile */
+  }
+}
+
+/* Even smaller screens (max-width 480px) */
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+  
+  .catalogue-button {
+    padding: 15px; /* Adjust padding on smaller screens */
+  }
+}
+img {
+  max-width: 100%;
+  height: auto; /* Maintains aspect ratio */
+}
+button, a {
+  padding: 15px 20px;
+  font-size: 16px;
+}
+
 
 nav {
   position: fixed;
   top: 0;
   width: 100%;
   background-color: #0c5064;
-  padding: 10px 0;
+  padding: 0px 0;
   text-align: center;
 }
 
 nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+   display: flex;
+  flex-wrap: wrap; 
+  justify-content: space-around;
+}
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column; /* Stack navigation on mobile */
+    align-items: center;
+  }
 }
 
 nav ul li {
@@ -32,9 +79,70 @@ nav ul li a {
   font-weight: bold;
 }
 
-nav ul li a:hover {
+#navbar ul li a:hover {
   color: #f0a500;
 }
+#navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  transition: top 0.3s;
+  z-index: 999; /* Ensure it's above other content */
+}
+
+#navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+
+#navbar a {
+  color: white;
+  text-decoration: none;
+  padding: 15px;
+}
+.hamburger {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+  color: white;
+  position: absolute;
+  right: 20px;
+  top: 15px;
+}
+
+/* Mobile-specific styling */
+@media (max-width: 768px) {
+  #navLinks {
+    display: none; /* Hide nav links initially */
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    flex-direction: column;
+  }
+
+  #navLinks li {
+    text-align: center;
+    padding: 15px;
+  }
+
+  .hamburger {
+    display: block; /* Show hamburger menu on mobile */
+  }
+}
+
+/* Show the menu when it's active */
+#navLinks.active {
+  display: flex; /* Show nav links when active */
+}
+body {
+  padding-top: 60px; /* Avoid content being hidden under the fixed navbar */
+}
+
 
 header {
   background-image: url('https://i.pinimg.com/736x/5a/a8/16/5aa816a4010db183e0f080523e7edba6.jpg');
